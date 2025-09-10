@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>未洗未来株式会社</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", sans-serif;
+      color: #333;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('office.jpg') center/cover no-repeat;
+      color: white;
+      padding: 120px 40px;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      margin: 0 0 20px;
+    }
+    .section {
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h3 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+    footer {
+      background: #f2f2f2;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    #scare {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: black;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #scare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>未洗未来株式会社</h1>
+    <nav>
+      <a href="#">会社概要</a>
+      <a href="#">事業内容</a>
+      <a href="#">採用情報</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>「あなたの未来を、勝手に設計します」</h2>
+    <p>未洗未来株式会社は、常に時代を1.5歩後ろから追いかけています。</p>
+  </div>
+
+  <div class="section">
+    <h3>企業理念</h3>
+    <p>「世界をややこしくする」ことが私たちの使命です。</p>
+  </div>
+
+  <div class="section">
+    <h3>事業内容</h3>
+    <ul>
+      <li>Aいい（AI）開発</li>
+      <li>ソリューションという言葉の提供</li>
+      <li>未来予測（ほぼ外れる）</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>採用情報</h3>
+    <p>求める人物像：すでに弊社で勤務している方</p>
+    <p>勤務地：不定（毎日変わります）</p>
+  </div>
+
+  <footer>
+    <p>© 1983–2089 未洗未来株式会社 - 住所: 東京都夢見区幻町1-2-3</p>
+  </footer>
+
+  <!-- ジャンプスケア -->
+  <div id="scare">
+    <img src="jumpscare.jpg" alt="Scary Image">
+    <audio id="scream" src="scream.mp3"></audio>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      const scare = document.getElementById("scare");
+      scare.style.display = "flex";
+      document.getElementById("scream").play();
+    }, 7000); // 7秒後に発動
+  </script>
+</body>
+</html>
