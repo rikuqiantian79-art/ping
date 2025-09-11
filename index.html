@@ -47,16 +47,23 @@
 
   <!-- ジャンプスケア部分 -->
   <div class="jumpscare" id="jumpscare">
-    <img src="jumpscare.jpg" alt="怖い画像">
+    <!-- ファイル名を正しく直す！ -->
+    <img src="jumpscare.jpg.gif" alt="怖い画像">
     <audio id="scream" src="scream.mp3"></audio>
   </div>
 
   <script>
+    // クリックしたら音を再生できるようにする
+    document.body.addEventListener("click", () => {
+      document.getElementById("scream").play();
+    });
+
+    // 5秒後にジャンプスケア発動
     setTimeout(() => {
       const scare = document.getElementById("jumpscare");
       scare.style.display = "flex";
       document.getElementById("scream").play();
-    }, 5000); // 5秒後に発動
+    }, 5000);
   </script>
 </body>
 </html>
