@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ニュー・フューチャー株式会社</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #004080;
+      color: white;
+      padding: 1.5rem;
+    }
+    main {
+      padding: 2rem;
+    }
+    .jumpscare {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .jumpscare img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ニュー・フューチャー株式会社</h1>
+    <p>未来を1.5歩後ろから追いかけるパートナー</p>
+  </header>
+  <main>
+    <h2>事業内容</h2>
+    <p>インフレーションを加速させるサービスを提供しています。</p>
+    <p>ニュー・フューチャー株式会社はあなたの未来をねっとり見守ります</p>
+  </main>
+
+  <!-- ジャンプスケア部分 -->
+  <div class="jumpscare" id="jumpscare">
+    <img src="jumpscare.jpg" alt="怖い画像">
+    <audio id="scream" src="scream.mp3"></audio>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      const scare = document.getElementById("jumpscare");
+      scare.style.display = "flex";
+      document.getElementById("scream").play();
+    }, 5000); // 5秒後に発動
+  </script>
+</body>
+</html>
