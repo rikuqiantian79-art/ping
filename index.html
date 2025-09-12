@@ -59,11 +59,15 @@
     });
 
     // 5秒後にジャンプスケア発動
-    setTimeout(() => {
-      const scare = document.getElementById("jumpscare");
-      scare.style.display = "flex";
-      document.getElementById("scream").play();
-    }, 5000);
+  <script>
+  // クリックで発動
+  document.addEventListener("click", () => {
+    const scare = document.getElementById("jumpscare");
+    scare.style.display = "flex";
+    document.getElementById("scream").play();
+  }, { once: true }); // 一度だけ発動
+</script>
+
   </script>
 </body>
 </html>
