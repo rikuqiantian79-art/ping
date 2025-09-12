@@ -5,19 +5,107 @@
   <title>ニュー・フューチャー株式会社</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: "Segoe UI", sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
     header {
       background: #004080;
       color: white;
-      padding: 1.5rem;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+    header nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* ===== スライドショー ===== */
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .caption {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+    .caption h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .caption p {
+      font-size: 1.2rem;
+    }
+
+    /* ===== メインコンテンツ ===== */
     main {
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      background: white;
+    }
+
+    .news, .voices, .recruit {
+      margin-top: 4rem;
+    }
+    .news ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+    .news li {
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      background: #002040;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* ===== ジャンプスケア ===== */
     .jumpscare {
       display: none;
       position: fixed;
@@ -28,34 +116,53 @@
       align-items: center;
       z-index: 9999;
     }
-   .jumpscare img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 画像を引き伸ばさず、画面いっぱいにカバー */
-}
-
+    .jumpscare img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
+  <!-- ヘッダー -->
   <header>
     <div class="logo">ニュー・フューチャー株式会社</div>
     <nav>
       <a href="#">会社情報</a>
-      <a href="#">事業内容</a>
-      <a href="#">採用情報</a>
-      <a href="#">お問い合わせ</a>
+      <a href="#services">事業内容</a>
+      <a href="#recruit">採用情報</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
   </header>
 
-  <!-- ヒーローセクション -->
-  <div class="hero">
-    <h1>未来を1.5歩後ろから追いかける</h1>
-    <p>時代に追いつかない安心感を、あなたに。</p>
+  <!-- スライドショーバナー -->
+  <div class="slideshow">
+    <div class="slide fade">
+      <img src="office1.jpg" alt="オフィス風景">
+      <div class="caption">
+        <h1>ニュー・フューチャー株式会社</h1>
+        <p>未来を1.5歩後ろから追いかける安心をあなたに</p>
+      </div>
+    </div>
+    <div class="slide fade">
+      <img src="office2.jpg" alt="未来感のあるイメージ">
+      <div class="caption">
+        <h1>インフレーション加速事業</h1>
+        <p>世界経済を不安定にするための斬新なソリューション</p>
+      </div>
+    </div>
+    <div class="slide fade">
+      <img src="office3.jpg" alt="社員の集合写真">
+      <div class="caption">
+        <h1>採用情報</h1>
+        <p>24時間監視に耐えられる仲間を募集しています</p>
+      </div>
+    </div>
   </div>
 
-  <!-- 本格的な事業内容カード -->
+  <!-- メイン -->
   <main>
-    <h2>事業内容</h2>
+    <h2 id="services">事業内容</h2>
     <div class="services">
       <div class="card">
         <h3>インフレーション加速事業</h3>
@@ -70,22 +177,78 @@
         <p>あえて古い技術を温存し、未来の足かせを作り出します。</p>
       </div>
     </div>
+
+    <!-- ニュース -->
+    <section class="news">
+      <h2>最新情報</h2>
+      <ul>
+        <li>2025年9月：社員が全員タイムスリップしました。</li>
+        <li>2025年7月：第3四半期の赤字が予想を超えて拡大しました。</li>
+        <li>2025年4月：監視サービスの対象にペットが追加されました。</li>
+      </ul>
+    </section>
+
+    <!-- お客様の声 -->
+    <section class="voices">
+      <h2>お客様の声</h2>
+      <div class="services">
+        <div class="card">
+          <p>「未来をねっとり見守られて安心です。」</p>
+          <small>― 匿名希望（32歳）</small>
+        </div>
+        <div class="card">
+          <p>「インフレーション加速のおかげで財布が軽くなりました。」</p>
+          <small>― 主婦（41歳）</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- 採用情報 -->
+    <section class="recruit" id="recruit">
+      <h2>採用情報</h2>
+      <p>ニュー・フューチャー株式会社では、以下の人材を募集しています：</p>
+      <ul>
+        <li>24時間監視に耐えられる方</li>
+        <li>未来を後ろから追いかける忍耐力がある方</li>
+        <li>赤字を笑顔で受け止められる方</li>
+      </ul>
+    </section>
   </main>
 
-  <!-- ジャンプスケア部分 -->
+  <!-- フッター -->
+  <footer id="contact">
+    <p>© 2025 ニュー・フューチャー株式会社 - 未来をねっとりと見守ります</p>
+  </footer>
+
+  <!-- ジャンプスケア -->
   <div class="jumpscare" id="jumpscare">
-    <!-- ファイル名を実際のものに合わせる -->
     <img src="jumpscare.jpg.gif" alt="怖い画像">
     <audio id="scream" src="scream.mp3"></audio>
   </div>
 
+  <!-- スクリプト -->
   <script>
-    // クリックしたらジャンプスケアを発動
+    // スライドショー
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = "0";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.opacity = "1";
+      setTimeout(showSlides, 4000);
+    }
+    showSlides();
+
+    // ジャンプスケア（クリックで発動）
     document.addEventListener("click", () => {
       const scare = document.getElementById("jumpscare");
       scare.style.display = "flex";
       document.getElementById("scream").play();
-    }, { once: true }); // 一度だけ発動
+    }, { once: true });
   </script>
 </body>
 </html>
+
