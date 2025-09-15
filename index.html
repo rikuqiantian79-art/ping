@@ -251,6 +251,30 @@
     <p>A. はい。</p>
   </details>
 </section>
+  <!-- 怪しいボタン -->
+<div class="scare-button-container">
+  <button id="scareButton" class="scare-button">特別なお知らせはこちら</button>
+</div>
+  .scare-button-container {
+  margin: 2rem;
+  text-align: center;
+}
+.scare-button {
+  background: linear-gradient(45deg, #ff0000, #ff6600);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.scare-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(255,0,0,0.9);
+}
   
   <!-- フッター -->
   <footer id="contact">
